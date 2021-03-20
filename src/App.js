@@ -16,6 +16,9 @@ function App() {
   const [email2Error, setEmail2Error] = useState("");
   const [password2Error, setPassword2Error] = useState("");
 
+  const [toggle, setToggle] = useState(false);
+  const [newPassword, setNewPassword] = useState('');
+
   const clearInputs = () => {
 		setEmail1("");
 		setPassword2("");
@@ -98,10 +101,30 @@ function App() {
 		authListener2();
 	}, []);
 
+	const toggleDiv = ()=>{
+		setToggle(!toggle)
+	}
+	const resetPass = ()=>{
+		let temp = (newPassword);
+		console.log(temp);
+		toggleDiv();
+		var user = app.auth().currentUser;
+		user.updatePassword(newPassword).then(function() {
+			console.log('password update successfully')
+		  }).catch(function(error) {
+			console.log('encountered error',error);
+		  });
+	}
+
   return (
       <div className="App">
 		  {user ? (
-				<User handleLogout={handleLogout} />
+				<User handleLogout={handleLogout} 
+					toggleDiv={toggleDiv} 
+					toggle={toggle}
+					setNewPassword={setNewPassword}
+					resetPass={resetPass}
+				/>
 			) : (
 				<Login
 					email1={email1}

@@ -27,7 +27,7 @@ input[type="number"]::-webkit-outer-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
-button {
+.Login button {
 	border: none;
 	outline: none;
 	width: 100%;
@@ -57,6 +57,78 @@ button {
 	color: black;
 	background-color: #00d1ff;
 }
+.hero {
+	width: 100%;
+	min-height: 100vh;
+	background: radial-gradient(
+		ellipse at left bottom,
+		rgba(22, 24, 47, 1) 0%,
+		rgba(38, 20, 72, 0.9) 59%,
+		rgba(17, 27, 75, 0.9) 100%
+	);
+}
+.hero{
+	position: relative;
+}
+.hero button{
+	padding: 7px 15px;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	letter-spacing: 1px;
+	background: #3d6cb9;
+	cursor: pointer;
+	border-radius: 5px;
+	margin: 10px;
+	color: aliceblue;
+}
+.hero nav {
+	position: fixed;
+	top: 0;
+	background: #603bbb;
+	width: 100%;
+	padding: 20px 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.hero .navitems{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.hero nav h2 {
+	color: #fff;
+}
+.newpass-div{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: #00d1ff;
+	width: fit-content;
+	min-height: 200px;
+	padding: 15px 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.newpass-div h2{
+	color: #171717;
+}
+.newpass-div input{
+	width: 100%;
+	border: none;
+	outline: none;
+	padding: 7px 15px;
+	background: #e1f4f3;
+	color: black;
+	letter-spacing: 1px;
+	border-radius: 5px;
+}
+
+/* MEDIA QUERIES */
 @media screen and (max-width: 800px) {
 	.Login {
 		flex-direction: column;
